@@ -19,7 +19,7 @@
     <% end %>
   </ul>
 
-  <%= link_to '<i class="fas fa-plus"></i> Add review'.html_safe, new_restaurant_review_path(@restaurant), class: "btn btn-sm btn-primary mb-2" %>
+  <%= render 'reviews/review_form' %>
 
   <%= link_to 'Back to home', restaurants_path %>
 </div>
