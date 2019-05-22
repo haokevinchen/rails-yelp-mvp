@@ -1,0 +1,14 @@
+<div class="conatainer">
+  <h1>List of restaurants</h1>
+  <!-- <button type="button" class="btn btn-sm btn-primary">Add restaurant</button> -->
+
+  <%= link_to '<i class="fas fa-plus"></i> Add restaurant'.html_safe, new_restaurant_path, class: "btn btn-sm btn-primary mb-2" %>
+</div>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %> |
+      <%= restaurant.category %>
+    </li>
+  <% end %>
+</ul>

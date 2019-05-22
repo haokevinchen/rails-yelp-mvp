@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Restaurant details</h1>
+
+  <div class="card">
+    <ul>
+    <li><%= @restaurant.name %></li>
+    <li><%= @restaurant.address %></li>
+    <li><%= @restaurant.phone_number %></li>
+    <li><%= @restaurant.category %></li>
+    </ul>
+  </div>
+
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <%= review.content %>
+        (<%= review.rating %> out of 5)
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to '<i class="fas fa-plus"></i> Add review'.html_safe, new_restaurant_review_path(@restaurant), class: "btn btn-sm btn-primary mb-2" %>
+
+  <%= link_to 'Back to home', restaurants_path %>
+</div>
